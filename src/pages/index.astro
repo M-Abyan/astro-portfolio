@@ -17,23 +17,22 @@ const title = "Home";
 		<div class="grid grid-cols-1 relative md:grid-cols-2 justify-end items-center gap-10">
 			<div class="flex flex-col grid-cols-2 gap-2 h-full">
 				<div class="grid grid-cols-2 gap-4">
-					<SocialMedia href="#" text="Instagram" bg="bg-pink-400">
+					<SocialMedia href="https://instagram.com/abyanriyadh" text="Instagram" bg="bg-pink-400">
 						<Icon name="social/instagram" class="text-3xl"></Icon>
 					</SocialMedia>
-					<SocialMedia href="#" text="Github" bg="bg-sky-400">
+					<SocialMedia href="https://github.com/M-Abyan" text="Github" bg="bg-sky-400">
 						<Icon name="social/github" class="text-3xl"></Icon>
 					</SocialMedia>
 				</div>
 				<div class="col-span-2 flex card box-shadow-2 shadow-sm gap-2 rounded-sm h-full items-center"> 
-					<div class="border-black border-r-[3px] p-2 h-full items-center flex">
+					<div class="border-black border-r-[3px] 
+					p-2 items-center h-20 md:h-full flex">
 						<Image 
 						src={myImage} 
-						width=100"
-						height="100"
 						loading="lazy"
 						decoding="async"
 						quality={100}
-						alt="A very cool penguin!"/>
+						alt="A very cool penguin!" class="h-full w-full md:w-96"/>
 					</div>
 					<div class="text-start">
 						<p>Name: Abyan</p>

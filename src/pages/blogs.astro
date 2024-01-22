@@ -6,6 +6,7 @@ import SocialMedia from '../components/SocialMedia.astro';
 // 
 import { Image } from "astro:assets"
 import { getCollection } from 'astro:content';
+import { Icon } from 'astro-icon/components';
 //  
 const blogs = await getCollection('blogs');
 const pageTitle = "My Blogs";
@@ -16,7 +17,9 @@ const pageTitle = "My Blogs";
     <div class="grid md:grid-cols-2 gap-4 content-center">
       <div class="grid grid-cols-2 w-full gap-4">
         <p class="col-span-2 md:row-span-10 mt-[14px] self-center md:text-5xl">My Blogs.</p>
-        <SocialMedia text="Instagram" href="asd" bg="black"></SocialMedia>
+        <SocialMedia href="https://instagram.com/abyanriyadh" text="Instagram" bg="bg-pink-400">
+          <Icon name="social/instagram" class="text-3xl"></Icon>
+        </SocialMedia> 
         <SocialMedia text="Github" href="asd" bg="black"></SocialMedia>
       </div>
       {blogs.map(

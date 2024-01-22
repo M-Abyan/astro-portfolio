@@ -2,12 +2,15 @@
 interface props {
     position: string;
 }
-
+import { Image } from "astro:assets";
+import myImage from "../img/test2.png";
 const { position } = Astro.props;
 ---
 
 <div class:list={["navbar", position]}>
-    <div class="logo-nav border-nav w-fit p-[6px]">Yan</div>
+    <div class="logo-nav border-nav w-fit h-full">
+        Yan
+    </div>
     <div class="flex justify-center items-center text-[10px]">
     {
         new Date().toLocaleDateString('en-us', 

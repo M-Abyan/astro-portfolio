@@ -1,15 +1,14 @@
 ---
 
 interface props {
-    href:string,
     text:string,
     classGrid: string
     pClass: string
 }
-const {href, text, classGrid, pClass} = Astro.props;
+const {text, classGrid, pClass} = Astro.props;
 ---
 
-<a href={href} class:list=
+<div  class:list=
 {
 ["card shadow-[2px_2px] flex items-center group rounded-sm", 
 classGrid]
