@@ -1,0 +1,101 @@
+---
+import { ViewTransitions } from "astro:transitions";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html transition:animate="none">
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />		
+		<meta name="generator" content={Astro.generator} />
+        
+		<title>{title} | Yan</title>
+	<ViewTransitions/>
+	</head>
+	<body class="font-primary">
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main{
+    @apply flex flex-col w-[80%] lg:w-[60%] 
+	xl:w-1/2 gap-10 justify-center text-center mx-auto
+}
+
+.arrow{
+    @apply fixed md:absolute right-[-20px] 
+    md:right-[-70px] md:top-[65%] rotate-[220deg]
+}
+
+.ghost{
+    @apply box-shadow-2 container-char rounded-sm bg-red-500
+}
+
+.toggleNavbar{
+    @apply md:static md:h-fit md:w-fit
+        md:border-0 fixed justify-center 
+        border-black top-0 border-b-[3px] border-l-[3px] rounded-bl-sm md:bg-inherit 
+}
+
+.card{
+    @apply border-[3px] border-black bg-white
+}
+
+.falling-star{
+    @apply fixed top-[42px] left-0
+}
+
+.social-card{
+    @apply grid grid-cols-[1fr,2fr] text-sm md:text-lg rounded-sm
+}
+
+.container-hey{
+    @apply absolute
+    top-[-20px] left-[-20px]
+    md:top-[-28px] md:left-[-30px] border-[3px] 
+    bg-white border-black underline-offset-1 
+    decoration-2 underline flex font-bold items-center px-4 text-sm
+}
+
+.container-char{
+    @apply absolute bottom-[-12px] 
+                right-[-10px] border-[3px] border-black px-1 py-[2px] 
+                
+}
+
+.navbar{
+    @apply md:px-20 lg:px-64 grid grid-cols-3
+    border-b-[3px] border-nav w-full bg-white font-bold z-10
+}
+
+.logo-nav{
+    @apply logo-bg-color border-r-[3px]  
+    md:border-x-[3px] flex px-2 items-center  
+}
+
+.box-shadow-1{
+    box-shadow: 6px 6px;
+}
+.box-shadow-2{
+    box-shadow: 3px 3px;
+}
+.border-nav{
+    border-color: black;
+}
+.logo-bg-color{
+    background-color: white;
+}
+</style>

@@ -1,0 +1,22 @@
+---
+
+interface props {
+    href:string,
+    text:string,
+    classGrid: string
+    pClass: string
+}
+const {href, text, classGrid, pClass} = Astro.props;
+---
+
+<a href={href} class:list=
+{
+["card shadow-[2px_2px] flex items-center group rounded-sm", 
+classGrid]
+}>	
+    <slot></slot>
+    <p class:list={
+    [
+        "font-bold text-[10px] md:text-sm border-black p-1 h-full w-full flex justify-center items-center"
+        , pClass]}>{text}</p>
+</a>

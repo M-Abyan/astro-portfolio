@@ -1,0 +1,60 @@
+---
+import SocialMedia from "../components/SocialMedia.astro";
+import Navbar from "../components/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Skills from "../components/Skills.astro"
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import myImage from "../img/test2.png";
+const title = "Home";
+---
+
+<Layout title={title}>
+	<Navbar position="fixed"></Navbar>
+	<main class="main h-dvh pt-[80px] z-0">
+		<Hero></Hero>
+		<div class="grid grid-cols-1 relative md:grid-cols-2 justify-end items-center gap-10">
+			<div class="flex flex-col grid-cols-2 gap-2 h-full">
+				<div class="grid grid-cols-2 gap-4">
+					<SocialMedia href="#" text="Instagram" bg="bg-pink-400">
+						<Icon name="social/instagram" class="text-3xl"></Icon>
+					</SocialMedia>
+					<SocialMedia href="#" text="Github" bg="bg-sky-400">
+						<Icon name="social/github" class="text-3xl"></Icon>
+					</SocialMedia>
+				</div>
+				<div class="col-span-2 flex card box-shadow-2 shadow-sm gap-2 rounded-sm h-full items-center"> 
+					<div class="border-black border-r-[3px] p-2 h-full items-center flex">
+						<Image 
+						src={myImage} 
+						width=100"
+						height="100"
+						loading="lazy"
+						decoding="async"
+						quality={100}
+						alt="A very cool penguin!"/>
+					</div>
+					<div class="text-start">
+						<p>Name: Abyan</p>
+						<p  class="text-[8px]">Email: abyanriyadh02@gmail.com</p>
+					</div>
+				</div>
+			</div>
+			<div class="card box-shadow-2 flex flex-col relative rounded-sm">
+				<div class="border-b-[3px] border-black p-2 bg-red-400 font-bold">
+					Skills
+				</div>
+				<div class="p-2 grid grid-cols-3 gap-4">
+					<Skills></Skills>
+				</div>
+				<div class="absolute shadow-[3px_1px] top-[40px] right-[-12px]
+                md:right-[-8px] border-[3px] border-black px-1 py-[4px] bg-cyan-400
+				rounded-sm">
+					<Icon name="swords" class="text-2xl md:text-3xl"></Icon>
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>
+

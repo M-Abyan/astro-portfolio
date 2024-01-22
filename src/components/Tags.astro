@@ -1,0 +1,18 @@
+---
+interface Props {
+	tags: string[];
+    href: string;
+}
+
+const { tags,href } = Astro.props;
+---
+
+<div class="flex gap-3 flex-wrap px-4">
+    {tags.map((post) => 
+        <a href={href} 
+        class="underline underline-offset-1 
+        bg-emerald-300 border-black border-2 p-1 font-bold rounded-md">
+            #{post}
+        </a>
+    )}
+</div>
