@@ -14,7 +14,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />		
+		<link rel="icon" type="image/svg+xml" href="/test3.png" />		
 		<meta name="generator" content={Astro.generator} />
         
 		<title>{title} | Yan</title>
@@ -93,7 +93,11 @@ const { title } = Astro.props;
     @apply logo-bg-color border-r-[3px]  
     md:border-x-[3px] flex p-2 items-center  
 }
-
+.mini-text{
+        @apply  font-extrabold 
+    text-[8px] leading-loose md:text-[12px] h-full 
+    border-l-[3px] border-black 
+    }
 .box-shadow-1{
     box-shadow: 6px 6px;
 }
@@ -105,5 +109,8 @@ const { title } = Astro.props;
 }
 .logo-bg-color{
     background-color: white;
+}
+.right-icon{
+    @apply text-lg md:text-2xl text-center
 }
 </style>

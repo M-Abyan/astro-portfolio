@@ -24,27 +24,29 @@ const title = "Home";
 						<Icon name="social/github" class="text-3xl"></Icon>
 					</SocialMedia>
 				</div>
-				<div class="col-span-2 flex card box-shadow-2 shadow-sm gap-2 rounded-sm h-full items-center"> 
-					<div class="border-black border-r-[3px] 
-					p-2 items-center h-20 md:h-full flex">
+				<div class="col-span-2 flex card box-shadow-2 shadow-sm
+				gap-2 rounded-sm h-20 md:h-full items-center "> 
+					<div class=" 
+					items-center md:h-full h-20 p-2 flex flex-col 
+					md:p-3 border-r-[3px] border-black md:w-full">
 						<Image 
 						src={myImage} 
 						loading="lazy"
 						decoding="async"
 						quality={100}
-						alt="A very cool penguin!" class="h-full w-full md:w-96"/>
+						alt="Handsome Guy" class="h-full w-full"/>
 					</div>
-					<div class="text-start">
-						<p>Name: Abyan</p>
-						<p  class="text-[8px]">Email: abyanriyadh02@gmail.com</p>
+					<div class="flex-col flex text-center  md:justify-start 
+					items-center md:w-1/2 w-[55%]">
+						<p class="md:rotate-90 text-sm">Hellow</p>
 					</div>
 				</div>
 			</div>
-			<div class="card box-shadow-2 flex flex-col relative rounded-sm">
+			<div class="card box-shadow-2 flex flex-col relative rounded-sm h-full">
 				<div class="border-b-[3px] border-black p-2 bg-red-400 font-bold">
 					Skills
 				</div>
-				<div class="p-2 grid grid-cols-3 gap-4">
+				<div class="p-2 grid grid-cols-3 gap-4 h-full ">
 					<Skills></Skills>
 				</div>
 				<div class="absolute shadow-[3px_1px] top-[40px] right-[-12px]

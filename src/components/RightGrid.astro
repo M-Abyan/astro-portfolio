@@ -1,0 +1,55 @@
+---
+import { Icon } from "astro-icon/components";
+import Border from "./Border.astro";
+---
+
+<div class="mini-text grid grid-rows-3 md:grid-rows-2 col-span-2 md:col-span-1">
+    <!--  -->
+    <div class="grid grid-cols-2 grid-rows-3 row-span-2 md:row-span-1">
+        <!-- -->
+        <div class=" row-span-2 grid grid-cols-2">
+            <div class="bg-slate-400 border-b-[3px] border-black relative">
+                <Border></Border>
+            </div>
+            <div class="bg-red-500 relative border-l-[3px] border-black row-span-2 grid grid-rows-2">
+                <Border></Border>
+            </div>
+            <div class="bg-sky-400 relative">
+                <Border></Border>
+            </div>
+        </div>
+        <!-- -->
+        <div class="row-span-3 border-l-[3px] border-black grid grid-cols-2">
+            <div class="bg-sky-400 relative col-span-2 border-b-[3px] border-black flex items-center justify-center">
+                <Border></Border>
+                <Icon name="ac" class="right-icon"/>
+            </div>
+            <div class="border-r-[3px] border-black grid grid-rows-2">
+                <div class="flex justify-center">
+                    <Icon name="fallingstar" class="right-icon"/>
+                </div>
+                <div class="border-t-[3px] border-black grid grid-cols-2">
+                    <div class="border-r-[1.6px] border-black md:border-r-0 flex items-center justify-center">H</div>
+                    <div class="border-l-[1.6px] border-black md:border-l-[3px] flex items-center justify-center">I</div>
+                </div>
+            </div>
+            <div class="grid grid-rows-2">
+                <div class=" bg-rose-400 w-full flex justify-center">
+                    <Icon name="fallingstar" class="right-icon"/>
+                </div>
+                <div class="bg-orange-400 border-t-[3px] border-black flex items-center justify-center">
+                    <Icon name="umbrella" class="right-icon"/>
+                </div>
+            </div>
+        </div>
+        <!-- -->
+        <div class="bg-violet-500 relative border-t-[3px] border-black">
+            <Border></Border>
+        </div>
+        <!-- -->
+    </div>
+    <!--  -->
+    <div class="bg-orange-300 border-t-[3px] border-black flex items-end">
+    </div>
+    <!--  -->
+</div>
