@@ -8,13 +8,16 @@ import Border from "./Border.astro";
     <div class="grid grid-cols-2 grid-rows-3 row-span-2 md:row-span-1">
         <!-- -->
         <div class=" row-span-2 grid grid-cols-2">
-            <div class="bg-slate-400 border-b-[3px] border-black relative">
+            <div class="bg-slate-400 border-b-[3px] flex items-center justify-center border-black relative">
+                <Icon name="rocket" class="right-icon rotate-[317deg]"/>
                 <Border></Border>
             </div>
-            <div class="bg-red-500 relative border-l-[3px] border-black row-span-2 grid grid-rows-2">
+            <div class="bg-red-500 relative border-l-[3px] border-black row-span-2 flex items-center justify-center">
+                <Icon name="hourglass" class="right-icon"/>
                 <Border></Border>
             </div>
-            <div class="bg-sky-400 relative">
+            <div class="bg-sky-400 relative flex items-center justify-center ">
+                <Icon name="planet" class="right-icon rotate-[325deg]"/>
                 <Border></Border>
             </div>
         </div>
@@ -43,13 +46,39 @@ import Border from "./Border.astro";
             </div>
         </div>
         <!-- -->
-        <div class="bg-violet-500 relative border-t-[3px] border-black">
+        <div class="relative bg-violet-500 border-t-[3px] border-black flex items-center justify-center">
+            <Icon name="keyboard" class="right-icon"/>
             <Border></Border>
         </div>
         <!-- -->
     </div>
     <!--  -->
-    <div class="bg-orange-300 border-t-[3px] border-black flex items-end">
+    <div class="border-t-[3px] border-black grid grid-cols-2">
+        <div class="grid grid-rows-2">
+            <div class="grid grid-cols-2">
+                <div class="border-r-[1.6px] bg-fuchsia-500 border-black relative flex items-center justify-center">
+                    <Icon name="border" class="rotate-90 absolute right-0 top-0"/>
+                    <Icon name="border" class="rotate-[270deg] absolute left-0 bottom-0"/>
+                    <Icon name="camper" class="text-xs md:text-xl md:right-icon"/>
+                </div>
+                <div class="border-l-[1.6px] bg-green-500  border-black relative flex items-center justify-center">
+                    <Icon name="border" class="absolute left-0 top-0"/>
+                    <Icon name="border" 
+                    class="rotate-180 absolute right-0 bottom-0"/>
+                    <Icon name="map" class="text-xs md:text-xl md:right-icon"/>
+                </div>
+            </div>
+            <div class="border-t-[3px] bg-blue-500 border-black relative flex items-center justify-center">
+                <Icon name="camera" class="text-xs md:text-xl md:right-icon"/>
+                <Border></Border>
+            </div>
+        </div>
+        <div class="border-l-[3px] border-black relative">
+            <Icon name="border" class="absolute left-0 top-0"/>
+            <Icon name="border" 
+            class="rotate-90 absolute right-0 top-0"/>
+            <Icon name="border" class="absolute rotate-[270deg] left-0 bottom-0"/>
+        </div>
     </div>
     <!--  -->
 </div>
