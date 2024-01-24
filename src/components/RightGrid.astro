@@ -8,45 +8,59 @@ import Border from "./Border.astro";
     <div class="grid grid-cols-2 grid-rows-3 row-span-2 md:row-span-1">
         <!-- -->
         <div class=" row-span-2 grid grid-cols-2">
-            <div class="bg-slate-400 border-b-[3px] flex items-center justify-center border-black relative">
+            <div class=" border-b-[3px] flex items-center justify-center border-black relative">
                 <Icon name="rocket" class="right-icon rotate-[317deg]"/>
                 <Border></Border>
             </div>
-            <div class="bg-red-500 relative border-l-[3px] border-black row-span-2 flex items-center justify-center">
+            <div class=" relative border-l-[3px] border-black row-span-2 flex items-center justify-center">
                 <Icon name="hourglass" class="right-icon"/>
                 <Border></Border>
             </div>
-            <div class="bg-sky-400 relative flex items-center justify-center ">
+            <div class=" relative flex items-center justify-center ">
                 <Icon name="planet" class="right-icon rotate-[325deg]"/>
                 <Border></Border>
             </div>
         </div>
         <!-- -->
         <div class="row-span-3 border-l-[3px] border-black grid grid-cols-2">
-            <div class="bg-sky-400 relative col-span-2 border-b-[3px] border-black flex items-center justify-center">
+            <div class=" relative col-span-2 border-b-[3px] border-black flex items-center justify-center">
                 <Border></Border>
                 <Icon name="ac" class="right-icon"/>
             </div>
             <div class="border-r-[3px] border-black grid grid-rows-2">
-                <div class="flex justify-center">
-                    <Icon name="fallingstar" class="right-icon"/>
+                <div class="flex relative items-center justify-center">
+                    <Icon name="news" class="right-icon"/>
+                    <Border></Border>
                 </div>
                 <div class="border-t-[3px] border-black grid grid-cols-2">
-                    <div class="border-r-[1.6px] border-black md:border-r-0 flex items-center justify-center">H</div>
-                    <div class="border-l-[1.6px] border-black md:border-l-[3px] flex items-center justify-center">I</div>
+                    <div class=" text-[6px] md:text-[10px] border-r-[1.6px] relative
+                    border-black md:border-r-0 flex items-center justify-center">
+                        H
+                        <Icon name="border" class="absolute left-0 top-0"/>
+                        <Icon name="border" 
+                        class="rotate-180 absolute right-0 bottom-0"/>
+                    </div>
+                    <div class="border-l-[1.6px] text-[6px] md:text-[10px] relative border-black md:border-l-[3px] flex items-center justify-center">
+                        I
+                        <Icon name="border" class="absolute right-0 top-0 rotate-90"/>
+                        <Icon name="border" 
+                        class="rotate-[270deg] absolute left-0 bottom-0"/>
+                    </div>
                 </div>
             </div>
             <div class="grid grid-rows-2">
-                <div class=" bg-rose-400 w-full flex justify-center">
+                <div class=" w-full flex relative justify-center items-center">
                     <Icon name="fallingstar" class="right-icon"/>
+                    <Border></Border>
                 </div>
-                <div class="bg-orange-400 border-t-[3px] border-black flex items-center justify-center">
+                <div class=" border-t-[3px] relative border-black flex items-center justify-center">
                     <Icon name="umbrella" class="right-icon"/>
+                    <Border></Border>
                 </div>
             </div>
         </div>
         <!-- -->
-        <div class="relative bg-violet-500 border-t-[3px] border-black flex items-center justify-center">
+        <div class="relative border-t-[3px] border-black flex items-center justify-center">
             <Icon name="keyboard" class="right-icon"/>
             <Border></Border>
         </div>
@@ -56,28 +70,41 @@ import Border from "./Border.astro";
     <div class="border-t-[3px] border-black grid grid-cols-2">
         <div class="grid grid-rows-2">
             <div class="grid grid-cols-2">
-                <div class="border-r-[1.6px] bg-fuchsia-500 border-black relative flex items-center justify-center">
+                <div class="border-r-[1.6px] border-black relative flex items-center justify-center">
                     <Icon name="border" class="rotate-90 absolute right-0 top-0"/>
                     <Icon name="border" class="rotate-[270deg] absolute left-0 bottom-0"/>
-                    <Icon name="camper" class="text-xs md:text-xl md:right-icon"/>
+                    <Icon name="camper" class="text-[10px] md:text-xl md:right-icon"/>
                 </div>
-                <div class="border-l-[1.6px] bg-green-500  border-black relative flex items-center justify-center">
+                <div class="border-l-[1.6px]  border-black relative flex items-center justify-center">
                     <Icon name="border" class="absolute left-0 top-0"/>
                     <Icon name="border" 
                     class="rotate-180 absolute right-0 bottom-0"/>
-                    <Icon name="map" class="text-xs md:text-xl md:right-icon"/>
+                    <Icon name="map" class="text-[10px] md:text-xl md:right-icon"/>
                 </div>
             </div>
-            <div class="border-t-[3px] bg-blue-500 border-black relative flex items-center justify-center">
+            <div class="border-t-[3px] md:text-xs text-[6px] border-black relative flex items-center justify-center">
                 <Icon name="camera" class="text-xs md:text-xl md:right-icon"/>
                 <Border></Border>
             </div>
         </div>
-        <div class="border-l-[3px] border-black relative">
-            <Icon name="border" class="absolute left-0 top-0"/>
-            <Icon name="border" 
-            class="rotate-90 absolute right-0 top-0"/>
-            <Icon name="border" class="absolute rotate-[270deg] left-0 bottom-0"/>
+        <div class="border-l-[3px] border-black relative grid grid-cols-2">
+            <div class="flex justify-center items-center relative">
+                <Icon name="alarm" class="text-xs md:text-xl md:right-icon"/>
+            <Border/>
+            </div>
+            <div class="grid grid-rows-2 border-l-[3px] border-black relative">
+                <div class="relative flex justify-center items-center">
+                    <Icon name="border" class="rotate-90 absolute right-0 top-0"/>
+                    <Icon name="border" class="rotate-[270deg] absolute left-0 bottom-0"/>
+                    <Icon name="book" class="text-[10px] md:text-xl md:right-icon"/>
+                </div>
+                <div class="relative border-t-[3px] border-black flex justify-center items-center">
+                    <Icon name="border" class="absolute left-0 top-0"/>
+                    <Icon name="border" 
+                    class="rotate-180 absolute right-0 bottom-0"/>
+                    <Icon name="mouse" class="text-[10px] md:rotate-0 rotate-[270deg] md:text-xl md:right-icon"/>
+                </div>
+            </div>
         </div>
     </div>
     <!--  -->

@@ -20,7 +20,7 @@ const { title } = Astro.props;
 		<title>{title} | Yan</title>
 	<ViewTransitions/>
 	</head>
-	<body>
+	<body class="">
 		<slot />
 	</body>
 </html>
@@ -51,8 +51,8 @@ body{
 }
 
 .ghost{
-    @apply shadow-[2px_2px] 
-    md:shadow-[3px_3px] container-char rounded-sm bg-red-500
+    @apply absolute bottom-0 
+                left-[-1px] border-[3px] border-black px-1 py-[2px] rounded-sm
 }
 
 .toggleNavbar{
@@ -75,16 +75,10 @@ body{
 
 .container-hey{
     @apply absolute
-    top-[-20px] left-[-20px]
+    top-[-20px] left-[-21px]
     md:top-[-28px] md:left-[-30px] border-[3px] 
     bg-white border-black underline-offset-1 
     decoration-2 underline flex font-bold items-center px-4 text-sm
-}
-
-.container-char{
-    @apply absolute bottom-[-12px] 
-                right-[-10px] border-[3px] border-black px-1 py-[2px] 
-                
 }
 
 .navbar{
