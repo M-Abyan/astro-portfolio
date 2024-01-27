@@ -13,54 +13,29 @@ const pageTitle = "My Blogs";
 ---
 <Layout title={pageTitle}>
   <Navbar position="static"></Navbar>
-  <main class="main mb-10 md:my-16 md:mb-16" >
+  <main class="mb-10 md:my-16 px-10 md:mb-16 justify-center md:px-20 lg:px-64">
     <div class="grid md:grid-cols-2 gap-4 content-center">
       <div class="grid grid-cols-2 w-full gap-4">
-        <p class="col-span-2 md:row-span-10 mt-[14px] self-center md:text-5xl">My Blogs.</p>
-        <SocialMedia href="https://instagram.com/abyanriyadh" text="Instagram" bg="bg-pink-400">
-          <Icon name="social/instagram" class="text-3xl"></Icon>
-        </SocialMedia> 
-        <SocialMedia text="Github" href="asd" bg="black"></SocialMedia>
+        <p class="col-span-2 md:row-span-10 mt-[14px] self-center md:text-5xl">
+          This Is Just Dummy Blogs.
+        </p>
       </div>
       {blogs.map(
-        (blog) => <div class="border-[3px] border-black box-shadow-2 rounded-sm">
+        (blog) => <div class="border-l-[3px] py-2 border-slate-200 rounded-sm">
         <div class="flex">
-          <div class="border-r-2 border-black">
-            <a href={`/blogs/${blog.slug}`} class="w-full z-0">
-              <Image 
-              src={blog.data.image}
-              alt={blog.data.title}
-              height="250"
-              format="webp"
-              quality={"mid"}
-              transition:name={blog.slug}
-              class="z-0"
-              />
-            </a>
-          </div>
           <div 
-          class="w-1/2 bg-orange-300 
+          class="w-full
           flex items-center justify-center text-balance px-2 md:px-0">
-            <p class="text-sm font-semibold">
-              {blog.data.pubDate.toLocaleString('en-US', {
-              weekday: 'long', // long, short, narrow
-              day: '2-digit', // numeric, 2-digit
-              year: 'numeric', // numeric, 2-digit
-              month: 'long', // numeric, 2-digit, long, short, narrow
-            })}
-            </p>
-
           </div>
-        </div>
-        <div 
-        class="border-y-2 py-2 border-black bg-violet-400 text-sm flex justify-center">
-          <Tags tags={blog.data.tags} href='#'/>
         </div>
         <div class="text-start p-4">
           <a href={`/blogs/${blog.slug}`}
           class="text-xl font-bold underline underline-offset-1 w-full" >
             {blog.data.title}
           </a>
+          <div class="text-sm">
+          <Tags tags={blog.data.tags} href='#'/>
+          </div>
           <p class="">{blog.data.description}</p>
         </div>
       </div>

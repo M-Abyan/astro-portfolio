@@ -17,19 +17,8 @@ const {Content} = await entry.render()
 ---
 
 <Layout title={entry.data.title}>
-  <main class="main py-20">
-  <div class="w-full flex justify-center pt-10 ">
-    <Image 
-    src={entry.data.image}
-    alt={entry.data.title} 
-    transition:name={entry.slug}
-    format="webp"
-    loading="lazy"
-    decoding="async"
-    class="border-[3px] border-black box-shadow-1 rounded-sm"
-    />
-  </div>
-  <div class="prose
+  <main class="main px-10 py-20">
+  <div class="prose dark:prose-invert
   prose-h1:font-bold prose-h1:text-xl
   prose-p:text-justify">
     <Content/>

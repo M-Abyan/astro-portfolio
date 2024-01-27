@@ -1,0 +1,41 @@
+---
+
+import { Icon } from "astro-icon/components";
+
+---
+
+<div
+	id="darkToggle"
+	class="fixed bottom-3 right-3 dark:bg-slate-200 dark:text-[#18181B] 
+    bg-[#18181B] text-slate-200 rounded-full p-3 cursor-pointer
+    flex items-center justify-center z-50 
+    transition-all duration-500 md:static "
+	x-on:click="darkMode = (darkMode == 'dark') ? 'light' : 'dark'"
+>
+<Icon name="sun" x-show.transition="darkMode === 'dark'"/>
+<Icon name="moon" x-show.transition="darkMode !== 'dark'"/>
+
+</div>
+
+
+
+		
+<script is:inline>
+	if (localStorage.getItem('darkMode') === 'dark') {
+		document.querySelector('html').dataset.theme = 'dark'
+	}
+
+	if (localStorage.getItem('darkMode') === 'light') {
+		document.querySelector('html').dataset.theme = 'light'
+	}
+
+
+	if (!localStorage.getItem('darkMode')) {
+		let theme = window.matchMedia('(prefers-color-scheme: dark)')
+			? 'dark'
+			: 'light'
+		localStorage.setItem('darkMode', theme)
+	}
+</script>
+
+	

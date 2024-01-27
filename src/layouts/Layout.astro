@@ -9,7 +9,13 @@ const { title } = Astro.props;
 ---
 
 <!doctype html transition:animate="none">
-<html lang="en" >
+<html lang="en"
+
+x-data="{darkMode: localStorage.getItem('darkMode')}"
+
+x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))"
+
+x-bind:data-theme="darkMode">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -20,7 +26,7 @@ const { title } = Astro.props;
 		<title>{title} | Yan</title>
 	<ViewTransitions/>
 	</head>
-	<body class="">
+	<body class="dark:bg-[#18181B] dark:text-slate-200 text-[#18181B]">
 		<slot />
 	</body>
 </html>
@@ -34,77 +40,57 @@ const { title } = Astro.props;
 @font-face {
     font-family: 'PlaypenSans';
     src: url('../../public/fonts/PlaypenSans-Bold.woff2') format('woff2');
+    font-weight: bolder;
 }
+@font-face {
+    font-family: 'PlaypenSans';
+    src: url('../../public/fonts/PlaypenSans-Medium.woff2') format('woff2');
+    font-weight: 400;
+}
+
+#cursor {
+        animation: blink 1s linear infinite;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 100%;
+        }
+        50% {
+          opacity: 0%;
+        }
+      }
 
 body{
     font-family: 'PlaypenSans', cursive;
 }
 
-.main{
-    @apply flex flex-col w-[80%] lg:w-[60%] 
-	xl:w-1/2 gap-10 justify-center text-center mx-auto
-}
-
-.arrow{
-    @apply fixed md:absolute right-[-20px] 
-    md:right-[-70px] md:top-[65%] rotate-[220deg]
-}
-
-.on-welcome{
-    @apply absolute border-[3px] border-black px-1 py-[2px] rounded-sm
-}
-
 .toggleNavbar{
     @apply md:static md:h-fit md:w-fit
         md:border-0 fixed justify-center 
-        border-black top-0 border-b-[3px] border-l-[3px] rounded-bl-sm md:bg-inherit 
+        top-11 z-10
+        dark:bg-[#18181B] bg-white h-full md:bg-inherit 
 }
 
 .card{
     @apply border-[3px] border-black bg-white
 }
 
-.falling-star{
-    @apply fixed top-[42px] left-0
-}
-
-.social-card{
-    @apply grid grid-cols-[1fr,2fr] text-sm md:text-lg rounded-sm
-}
-
-.container-hey{
-    @apply absolute
-    top-[-20px] left-[-21px]
-    md:top-[-28px] md:left-[-30px] border-[3px] 
-    bg-white border-black underline-offset-1 
-    decoration-2 underline flex font-bold items-center px-4 text-sm
-}
 
 .navbar{
-    @apply md:px-20 lg:px-64 grid grid-cols-2
-    border-b-[3px] border-nav w-full bg-white font-bold z-10
+    @apply flex justify-between md:px-20 lg:px-72 py-2 md:py-0 px-2 
+    border-b-[1px] dark:border-white border-black w-full font-bold
 }
 
 .logo-nav{
-    @apply logo-bg-color border-r-[3px]  
-    md:border-x-[3px] flex p-2 items-center  
+    @apply flex items-center text-xl 
 }
-.mini-text{
-        @apply  font-extrabold 
-    text-[8px] leading-loose md:text-[12px] h-full 
-    border-l-[3px] border-black 
-    }
+
 .box-shadow-1{
     box-shadow: 6px 6px;
 }
 .box-shadow-2{
     box-shadow: 3px 3px;
-}
-.border-nav{
-    border-color: black;
-}
-.logo-bg-color{
-    background-color: white;
 }
 .right-icon{
     @apply text-lg md:text-2xl text-center
