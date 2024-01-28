@@ -1,0 +1,53 @@
+<div class="">
+    <span id="typewriter" class="underline
+    decoration-sky-500 text-xl decoration-2"></span>
+    <span id="cursor" class="text-xl z-0">|</span>
+</div>
+
+
+<!-- <h1 x-text="text"></h1> -->
+
+</span>
+
+<script type="module">
+
+	function sleep(ms) {
+		return new Promise(resolve =>setTimeout(resolve,ms))
+	}
+
+
+	const phrases = ["Coding", "Sleeping", "Eating", "Drinking"]
+	const el = document.querySelector("#typewriter")
+
+	let sleepTime = 100
+
+	let curPhraseIndex = 0 
+
+	const writeLopp = async () => {
+		while (true) {
+			let curWord = phrases[curPhraseIndex]
+
+			for (let i = 0; i < curWord.length; i++) {
+				el.innerText = curWord.substring(0, i + 1)
+				await sleep(sleepTime)
+			}
+
+			await sleep(sleepTime * 10)
+
+			for (let i = curWord.length; i > 0; i--) {
+				el.innerText = curWord.substring(0, i - 1);
+				await sleep(sleepTime);
+				}
+
+			await sleep(sleepTime * 5);
+
+			if (curPhraseIndex === phrases.length - 1) {
+            curPhraseIndex = 0;
+			} else {
+				curPhraseIndex++;
+			}
+		}
+	}
+
+	writeLopp()
+</script>

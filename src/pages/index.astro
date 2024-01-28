@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import TypeWriting from "../components/TypeWriting.astro";
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
@@ -8,25 +9,16 @@ const title = "Home";
 ---
 
 <Layout title={title}>
-	<Navbar position="fixed"></Navbar>
-	<main class="h-dvh flex flex-col justify-center md:px-20 lg:px-64">
-		<div class="mx-auto">
-			<!-- <div>
-				<p class="font-normal text-sm">
-					Hello <span class="underline decoration-sky-400">Beautiful</span> People
-				</p>
-			</div> -->
-			<div class="">
-				<span id="typewriter" class="underline
-				decoration-sky-500 text-xl decoration-2"></span>
-				<span id="cursor" class="text-xl z-0">|</span>
-			</div>
-			<div class="py-5">
-				<h1 class="text-7xl md:text-9xl font-extrabold ">Welcome</h1>
-			</div>
+	<Navbar position="fixed" margin="mx-8"></Navbar>
+	<main class="flex items-center">
+			<div class=" h-dvh flex flex-col w-full justify-center">
+				<TypeWriting/>
+				<div class="py-5 ">
+					<h1 class="text-7xl md:text-9xl font-extrabold text-center">Welcome</h1>
+				</div>
 			<div class="flex flex-col pl-2 gap-3 text-xs">
 				<a href="" class="flex items-center gap-2 underline decoration-2
-				 decoration-sky-500">
+				decoration-sky-500">
 					<Icon name="social/github"/>
 					Github
 				</a>
@@ -40,44 +32,4 @@ const title = "Home";
 	</main>
 </Layout>
 
-<script is:inline>
 
-	function sleep(ms) {
-		return new Promise(resolve =>setTimeout(resolve,ms))
-	}
-
-	const phrases = ["Coding", "Sleeping", "Eating", "Drinking"]
-	const el = document.querySelector("#typewriter")
-
-	let sleepTime = 100
-
-	let curPhraseIndex = 0 
-
-	const writeLopp = async () => {
-		while (true) {
-			let curWord = phrases[curPhraseIndex]
-
-			for (let i = 0; i < curWord.length; i++) {
-				el.innerText = curWord.substring(0, i + 1)
-				await sleep(sleepTime)
-			}
-
-			await sleep(sleepTime * 10)
-
-			for (let i = curWord.length; i > 0; i--) {
-            		el.innerText = curWord.substring(0, i - 1);
-            		await sleep(sleepTime);
-          	}
-
-			await sleep(sleepTime * 5);
-
-			if (curPhraseIndex === phrases.length - 1) {
-            curPhraseIndex = 0;
-			} else {
-				curPhraseIndex++;
-			}
-		}
-	}
-
-	writeLopp()
-</script>

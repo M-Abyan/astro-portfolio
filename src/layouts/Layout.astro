@@ -8,7 +8,7 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<!doctype html transition:animate="none">
+<!doctype html>
 <html lang="en"
 
 x-data="{darkMode: localStorage.getItem('darkMode')}"
@@ -26,7 +26,8 @@ x-bind:data-theme="darkMode">
 		<title>{title} | Yan</title>
 	<ViewTransitions/>
 	</head>
-	<body class="dark:bg-[#18181B] dark:text-slate-200 text-[#18181B]">
+	<body class="dark:bg-[#18181B] dark:text-slate-200 text-[#18181B] mx-8 max-w-xl md:mx-auto">
+        
 		<slot />
 	</body>
 </html>
@@ -78,8 +79,7 @@ body{
 
 
 .navbar{
-    @apply flex justify-between md:px-20 lg:px-72 py-2 md:py-0 px-2 
-    border-b-[1px] dark:border-white border-black w-full font-bold
+    @apply  w-full left-0
 }
 
 .logo-nav{
