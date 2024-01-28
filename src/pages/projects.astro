@@ -1,12 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
-import { Image } from "astro:assets";
-import myImage from "../img/test2.png";
+const title = "Projects";
 ---
 
-<Layout title="Welcome to Astro.">
-	<Navbar position="fixed"/>
+<Layout title={title}>
+	<Navbar position="" title={title}/>
 	<main class="justify-center flex items-center h-dvh">
 		No Projects Yet.
 	</main>

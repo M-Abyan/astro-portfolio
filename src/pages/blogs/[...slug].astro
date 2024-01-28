@@ -1,8 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from 'astro:content';
-import { Image } from "astro:assets";
-import type { CollectionEntry } from "astro:content";
+// import { Image } from "astro:assets";
+// import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
   const blogs = await getCollection("blogs");
@@ -22,7 +22,7 @@ const {Content} = await entry.render()
   prose-h1:font-bold prose-h1:text-xl
   prose-p:text-justify">
     <Content/>
+  <a href="/blogs" class="w-fit mt-10 underline decoration-sky-500">Back</a>
   </div>
-  <a href="/blogs" class="w-fit">Back</a>
   </main>
 </Layout>

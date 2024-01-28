@@ -3,7 +3,7 @@ import Layout from './Layout.astro';
 const { frontmatter } = Astro.props;
 ---
 <Layout title={frontmatter.title}>
-  <h1 >{frontmatter.title}</h1>
+  <h1 transition:name={frontmatter.title}>{frontmatter.title}</h1>
   <p>Desc: {frontmatter.description}</p>
   <p>Written by: {frontmatter.author}</p>
   <div class="flex gap-2">

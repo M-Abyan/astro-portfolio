@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Tags from '../../components/Tags.astro';
+export async function getStaticPaths({ paginate }) {
+    const blogs = await getCollection("blogs");
+    return paginate(blogs, {
+        pageSize: 4
+    })
+}
+const title = 'Blogs'
+const { page } = Astro.props;
+---
+
+<Layout title={title}>
+    <Navbar position="static" margin="mx-0" title={title}></Navbar>
+    <main class="">
+      <p class="col-span-2 md:row-span-10 py-12 text-center">
+        This Is Just Dummy Blogs.
+        </p>
+      <div class="grid md:grid-cols-2 gap-4">
+        {page.data.map(
+            (blog) => 
+                <div class="px-2 flex flex-col w-full border-l-4 border-sky-500 rounded-sm">
+                    <p class="text-xs underline decoration-sky-500">
+                      {
+                      blog.data.pubDate.toLocaleDateString('en-us',
+                      { weekday:"long", year:"numeric", month:"long", day:"numeric"}) 
+                      }
+                    </p>
+                    <p
+                    class="text-2xl py-4 font-bold" transition:name={blog.data.title}>
+                    {blog.data.title}
+                    </p>
+                    <Tags tags={blog.data.tags} href='#'></Tags>
+                    <a href={`/blogs/${blog.slug}`} class="text-sm bg-[#181a1b] p-2 w-fit rounded-sm">
+                      Read More
+                    </a>
+                </div>
+        )}
+      </div>
+      <div class="py-12">
+        {page.url.prev ? <a href={page.url.prev}>Previous</a> : null}
+        {page.url.next ? <a href={page.url.next}>Next</a> : null}
+      </div>
+    </main>
+</Layout>

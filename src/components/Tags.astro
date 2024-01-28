@@ -7,11 +7,11 @@ interface Props {
 const { tags,href } = Astro.props;
 ---
 
-<div class="flex gap-3 flex-wrap">
+<div class="flex gap-3 flex-wrap mb-4">
     {tags.map((post) => 
         <a href={href} 
-        class="underline underline-offset-1 
-        p-1 font-bold ">
+        class=" 
+        p-1 ">
             #{post}
         </a>
     )}

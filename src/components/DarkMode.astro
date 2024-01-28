@@ -7,13 +7,17 @@ import { Icon } from "astro-icon/components";
 <div
 	id="darkToggle"
 	class=" text-[#18181B] 
-    dark:text-slate-200 rounded-full p-3 cursor-pointer
-    flex items-center justify-center z-50 
-    transition-all duration-500 md:static text-2xl"
+    dark:text-slate-200 rounded-fullcursor-pointer
+    flex items-center justify-center 
+    transition-all duration-500 md:static text-2xl group flex-col"
 	x-on:click="darkMode = (darkMode == 'dark') ? 'light' : 'dark'"
 >
-<Icon name="sun" x-show.transition="darkMode !== 'dark'"/>
-<Icon name="moon" x-show.transition="darkMode === 'dark'"/>
+<span class="bg-left-bottom bg-gradient-to-r from-sky-500 to-sky-500 
+bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px]
+transition-all duration-300">
+	<Icon name="sun" x-show.transition="darkMode !== 'dark'"/>
+	<Icon name="moon" x-show.transition="darkMode === 'dark'"/>
+</span>
 
 </div>
 
