@@ -3,33 +3,28 @@ import Navbar from "../components/Navbar.astro";
 import TypeWriting from "../components/TypeWriting.astro";
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
-import myImage from "../img/test2.png";
 const title = "Home";
 ---
 
 <Layout title={title}>
 	<Navbar position="fixed" margin="mx-8" title={title}></Navbar>
 	<main class="flex items-center">
-			<div class=" h-dvh flex flex-col w-full justify-center">
+		<div class=" h-dvh flex flex-col w-full justify-center">
 				<TypeWriting/>
-				<div class="py-5 ">
-					<h1 class="text-7xl md:text-9xl font-extrabold text-center">Welcome</h1>
-				</div>
-			<div class="flex flex-col pl-2 gap-3 text-xs">
-				<a href="" class="flex items-center gap-2 underline decoration-2
-				decoration-sky-500">
+			<div class="py-5 ">
+				<h1 class="text-7xl md:text-9xl font-extrabold text-center">Welcome</h1>
+			</div>
+			<div class="flex flex-col pl-2 gap-4">
+				<a href="https://github.com/m-abyan" class="flex items-center gap-1 underline-theme  decoration-2"
+				:style="{ 'text-decoration-color': color }">
 					<Icon name="social/github"/>
-					Github
+					<p class="text-xs" >abyanmal</p>
 				</a>
-				<a href="" class="flex items-center gap-2 underline decoration-2 
-				decoration-sky-500">
+				<a href="https://www.instagram.com/abyanriyadh" class="flex items-center underline-theme gap-1 decoration-2 " 
+				:style="{ 'text-decoration-color': color }">
 					<Icon name="social/instagram"/>
-					Instagram
+					<p class="text-xs">abyanmal</p>
 				</a>
 			</div>
-		</div>
 	</main>
 </Layout>
-
-

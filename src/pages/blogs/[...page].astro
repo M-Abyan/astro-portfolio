@@ -22,8 +22,8 @@ const { page } = Astro.props;
       <div class="grid md:grid-cols-2 gap-4">
         {page.data.map(
             (blog) => 
-                <div class="px-2 flex flex-col w-full border-l-4 border-sky-500 rounded-sm">
-                    <p class="text-xs underline decoration-sky-500">
+                <div class="px-2 flex flex-col w-full border-l-4  rounded-sm" :style="{'border-color': color}" >
+                    <p class="text-xs underline" :style="{'text-decoration-color': color}">
                       {
                       blog.data.pubDate.toLocaleDateString('en-us',
                       { weekday:"long", year:"numeric", month:"long", day:"numeric"}) 
@@ -34,7 +34,7 @@ const { page } = Astro.props;
                     {blog.data.title}
                     </p>
                     <Tags tags={blog.data.tags} href='#'></Tags>
-                    <a href={`/blogs/${blog.slug}`} class="text-sm bg-[#181a1b] p-2 w-fit rounded-sm">
+                    <a href={`/blogs/${blog.slug}`} class="text-sm bg-slate-100 dark:bg-[#181a1b] p-2 w-fit rounded-sm">
                       Read More
                     </a>
                 </div>

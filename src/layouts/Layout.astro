@@ -9,13 +9,14 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en"
+<html lang="en" 
+x-data="{darkMode: localStorage.getItem('darkMode'), color: localStorage.getItem('color')}"
+x-init="$watch('color', value => localStorage.setItem('color', value)), $watch( 'darkMode', val => localStorage.setItem('darkMode', val) ) " 
 
-x-data="{darkMode: localStorage.getItem('darkMode')}"
+x-bind:data-theme="darkMode"
 
-x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))"
+>
 
-x-bind:data-theme="darkMode">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -31,6 +32,8 @@ x-bind:data-theme="darkMode">
 		<slot />
 	</body>
 </html>
+
+
 
 <style is:global>
 @tailwind base;
@@ -62,8 +65,16 @@ x-bind:data-theme="darkMode">
         }
 }
 
+.hover-underline-animation {
+    @apply absolute w-0 h-[2px] bottom-0 left-0 group-hover:w-full transition-all;
+}
+
 body{
     font-family: 'PlaypenSans', cursive;
+}
+
+.underline-theme{
+    @apply underline;
 }
 
 .toggleNavbar{
