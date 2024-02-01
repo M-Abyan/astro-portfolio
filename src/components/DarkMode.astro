@@ -28,12 +28,9 @@ import { Icon } from "astro-icon/components";
 	if (localStorage.getItem('darkMode') === 'dark') {
 		document.querySelector('html').dataset.theme = 'dark'
 	}
-
 	if (localStorage.getItem('darkMode') === 'light') {
 		document.querySelector('html').dataset.theme = 'light'
 	}
-
-
 	if (!localStorage.getItem('darkMode')) {
 		let theme = window.matchMedia('(prefers-color-scheme: dark)')
 			? 'dark'
