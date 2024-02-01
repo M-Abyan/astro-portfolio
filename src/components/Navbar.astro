@@ -12,13 +12,13 @@ const { position,margin,title } = Astro.props;
     <div class:list={["flex max-w-xl justify-between md:mx-auto", margin]}>
     <div class="logo-nav w-fit">
         <div>
-            Yan
+            <span>Yan</span>
             <span class=""> | </span>
-            <span class="text-xs">{title}</span>
+            <span class="text-xs underline decoration-2" :style="{ 'text-decoration-color': color }">{title}</span>
         </div>
     </div>
-    <div class="flex items-center md:gap-10 gap-5" x-data="{ isShow: false }">
-        <div class="md:order-last flex items-center gap-4">
+    <div class="flex items-center md:gap-10 gap-3" x-data="{ isShow: false }">
+        <div class="md:order-last flex items-center gap-3">
             <Theme />
             <DarkMode />
         </div>
