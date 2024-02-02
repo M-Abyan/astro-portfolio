@@ -1,7 +1,7 @@
 <div class="">
     <span id="typewriter" class="text-xl decoration-2 underline"
 	:style="{ 'text-decoration-color': color }"></span>
-    <span id="cursor" class="text-xl z-0">|</span>
+    <span class="text-xl">|</span>
 </div>
 
 <script type="module">
@@ -9,7 +9,6 @@
 	function sleep(ms) {
 		return new Promise(resolve =>setTimeout(resolve,ms))
 	}
-
 
 	const phrases = ["Coding", "Sleeping", "Eating", "Drinking"]
 	const el = document.querySelector("#typewriter")

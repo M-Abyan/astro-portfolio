@@ -23,11 +23,10 @@ x-bind:data-theme="darkMode"
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/test3.png" />		
 		<meta name="generator" content={Astro.generator} />
-        
 		<title>{title} | Yan</title>
 	<ViewTransitions/>
 	</head>
-	<body class="dark:bg-[#18181B] dark:text-slate-200 text-[#18181B] mx-8 max-w-xl md:mx-auto">
+	<body class="dark:bg-[#18181B] dark:text-slate-200 text-[#18181B] ">
         
 		<slot />
 	</body>
@@ -52,17 +51,8 @@ x-bind:data-theme="darkMode"
     font-weight: 400;
 }
 
-#cursor {
-        animation: blink 3s linear infinite;
-        }
-
-        @keyframes blink {
-        0% {
-            opacity: 100%;
-        }
-        50% {
-            opacity: 0%;
-        }
+.main{
+    @apply max-w-xl md:mx-auto mx-8 
 }
 
 .hover-underline-animation {
@@ -80,7 +70,7 @@ body{
 .toggleNavbar{
     @apply md:static md:h-fit md:w-fit
         md:border-0 fixed justify-center 
-        top-20 h-fit z-10 
+        top-0 h-dvh z-10 
         dark:bg-[#18181B] bg-white w-full md:bg-inherit 
 }
 

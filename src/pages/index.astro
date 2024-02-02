@@ -7,23 +7,33 @@ const title = "Home";
 ---
 
 <Layout title={title}>
-	<Navbar position="fixed" margin="mx-8" title={title}></Navbar>
-	<main class="flex items-center">
+	<Navbar position="fixed"  title={title}></Navbar>
+	<main class="flex items-center main">
 		<div class=" h-dvh flex flex-col w-full justify-center">
+			<div class="">
 				<TypeWriting/>
-			<div class="py-5 ">
+			</div>
+			<div class="py-5">
 				<h1 class="text-7xl md:text-9xl font-extrabold text-center">Welcome</h1>
 			</div>
-			<div class="flex flex-col pl-2 gap-4">
-				<a href="https://github.com/m-abyan" class="flex items-center gap-1 underline-theme w-fit decoration-2"
+			<div class="text-xs w-[75%] md:w-1/2 pb-5">
+				<h2 class="text-xl underline-theme decoration-2 pb-2"
+				:style="{ 'text-decoration-color': color }">About</h2>
+				<p>Hello, I'm just a normal guy from Indonesia. I am currently learning 
+					<a href="https://astro.build/" class="underline-theme" :style="{ 'text-decoration-color': color }">Astro JS</a>, 
+					<a href="https://tailwindcss.com/" class="underline-theme" :style="{ 'text-decoration-color': color }">Tailwind</a>, 
+					And other things
+				</p>
+			</div>
+			<div class="flex gap-2 items-center">
+				<a href="https://github.com/m-abyan" class="text-xs flex items-center gap-1 underline-theme w-fit decoration-2"
 				:style="{ 'text-decoration-color': color }">
-					<Icon name="social/github"/>
-					<p class="text-xs" >abyanmal</p>
+					<Icon name="social/github"/> Github
 				</a>
-				<a href="https://www.instagram.com/abyanriyadh" class="flex items-center underline-theme w-fit gap-1 decoration-2 " 
+				<p class="text-xs">|</p>
+				<a href="https://www.instagram.com/abyanriyadh" class="text-xs flex items-center underline-theme w-fit gap-1 decoration-2" 
 				:style="{ 'text-decoration-color': color }">
-					<Icon name="social/instagram"/>
-					<p class="text-xs">abyanmal</p>
+					<Icon name="social/instagram"/> Instagram
 				</a>
 			</div>
 	</main>

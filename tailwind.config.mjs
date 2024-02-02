@@ -8,6 +8,9 @@ export default {
 			fontFamily: {
 				'primary': ['Playpen Sans', 'cursive']
 			},
+			backgroundImage: {
+				'test': "url('/src/img/grid/picture-1.jpg')",
+			}
 		},
 	},
 	plugins: [

@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Tags from '../../components/Tags.astro';
@@ -14,25 +15,27 @@ const { page } = Astro.props;
 ---
 
 <Layout title={title}>
-    <Navbar position="static" margin="mx-0" title={title}></Navbar>
-    <main class="">
-      <p class="col-span-2 md:row-span-10 py-12 text-center">
+    <Navbar position="static" title={title}></Navbar>
+    <main class="max-w-xl md:mx-auto mx-8">
+      <p class="col-span-2 md:row-span-10 py-12">
         This Is Just Dummy Blogs.
         </p>
-      <div class="grid md:grid-cols-2 gap-4">
+      <div class="grid gap-4">
         {page.data.map(
             (blog) => 
                 <div class="px-2 flex flex-col w-full border-l-4  rounded-sm" :style="{'border-color': color}" >
-                    <p class="text-xs underline" :style="{'text-decoration-color': color}">
+                    <div class="flex items-center gap-2">
+                      <p class="text-xs">
                       {
                       blog.data.pubDate.toLocaleDateString('en-us',
-                      { weekday:"long", year:"numeric", month:"long", day:"numeric"}) 
+                      { weekday:"short", year:"numeric", month:"short", day:"numeric"}) 
                       }
-                    </p>
-                    <p
-                    class="text-2xl py-4 font-bold" transition:name={blog.data.title}>
-                    {blog.data.title}
-                    </p>
+                      </p>
+                      <span>|</span>
+                      <p>
+                        {blog.data.title}
+                      </p>
+                    </div>
                     <!-- <Tags tags={blog.data.tags} href='#'></Tags> -->
                     <a href={`/blogs/${blog.slug}`} class="text-sm bg-slate-100 dark:bg-[#181a1b] p-2 w-fit rounded-sm">
                       Read More
