@@ -14,26 +14,25 @@ const title = "Home";
 				<TypeWriting/>
 			</div>
 			<div class="py-5">
-				<h1 class="text-7xl md:text-9xl font-extrabold text-center">Welcome</h1>
+				<h1 class="text-[28px] md:text-5xl font-extrabold">Hello Beautiful people</h1>
 			</div>
 			<div class="text-xs w-[75%] md:w-1/2 pb-5">
-				<h2 class="text-xl underline-theme decoration-2 pb-2"
-				:style="{ 'text-decoration-color': color }">About</h2>
-				<p>Hello, I'm just a normal guy from Indonesia. I am currently learning 
-					<a href="https://astro.build/" class="underline-theme" :style="{ 'text-decoration-color': color }">Astro JS</a>, 
-					<a href="https://tailwindcss.com/" class="underline-theme" :style="{ 'text-decoration-color': color }">Tailwind</a>, 
-					And other things
+				<p class="leading-relaxed">
+					<span class="mr-1 px-[2px] rounded-sm bg-red-600" :style="{'background-color': color}"></span>
+					I'm just a normal guy.<br> I'm a big fan of 
+					<span>
+						Tailwind
+					</span>
 				</p>
 			</div>
-			<div class="flex gap-2 items-center">
-				<a href="https://github.com/m-abyan" class="text-xs flex items-center gap-1 underline-theme w-fit decoration-2"
+			<div class="flex gap-5 items-center">
+				<a href="https://github.com/m-abyan" class="text-sm flex items-center gap-1 underline-theme w-fit decoration-2"
 				:style="{ 'text-decoration-color': color }">
-					<Icon name="social/github"/> Github
+					<Icon name="social/github"/>
 				</a>
-				<p class="text-xs">|</p>
-				<a href="https://www.instagram.com/abyanriyadh" class="text-xs flex items-center underline-theme w-fit gap-1 decoration-2" 
+				<a href="https://www.instagram.com/abyanriyadh" class="text-sm flex items-center underline-theme w-fit gap-1 decoration-2" 
 				:style="{ 'text-decoration-color': color }">
-					<Icon name="social/instagram"/> Instagram
+					<Icon name="social/instagram"/>
 				</a>
 			</div>
 	</main>

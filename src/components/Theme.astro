@@ -2,18 +2,18 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<div x-data="{ open: false }" class="flex items-center justify-center w-4 h-4 relative">
+<div x-data="{ open: false }" class="flex items-center justify-center relative">
     <button 
     x-on:click="open = !open" 
     :style="{  'outline-color': color }" 
-    class="outline outline-offset-2 rounded-full w-full h-full ">
-    <Icon name="brush" :style="{ 'color': color}"     />
+    class=" w-full h-full text-base dark:bg-neutral-800 bg-slate-200 p-1 flex it rounded-sm">
+    <Icon name="brush"  class="text-neutral-400 rounded-full "/>
     </button>
-    <div class="flex gap-4 absolute top-8 dark:bg-white bg-[#18181B] rounded-sm  p-2" 
+    <div class="flex gap-4  text-xs absolute top-8 dark:bg-neutral-800 bg-slate-200 rounded-sm  p-2" 
     x-show="open"
     x-on:click.outside="open = false">
-            <button x-on:click="color = '#0ea5e9' " class="bg-sky-500 p-2 outline-sky-500 rounded-full outline outline-offset-2" value="#0ea5e9"></button>
-            <button x-on:click="color = '#8b5cf6' " class="bg-purple-500 p-2 outline-purple-500 rounded-full outline outline-offset-2" value="#8b5cf6"></button>
+            <button x-on:click="color = '#0ea5e9' " class="bg-sky-500  p-2 outline-sky-500 rounded-full outline outline-offset-2" value="#0ea5e9"></button>
+            <button x-on:click="color = '#dc2626' " class="bg-red-600 p-2 outline-red-600 rounded-full outline outline-offset-2" value="#dc2626"></button>
             <button x-on:click="color = '#ec4899' " class="bg-pink-500 p-2 outline-pink-500 rounded-full outline outline-offset-2" value="#ec4899"></button>
     </div>
 </div>

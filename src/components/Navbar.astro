@@ -20,14 +20,14 @@ const { position,margin,title } = Astro.props;
             <Theme />
             <DarkMode />
         </div>
-        <div class="md:hidden flex flex-col gap-1 items-center w-full z-40" 
+        <div class="md:hidden flex flex-col dark:bg-neutral-800 bg-slate-200 rounded-sm p-2 h-full gap-1 items-center w-full z-40" 
         x-on:click="isShow = !isShow" >
-            <span class="dark:bg-slate-200 bg-[#18181B] w-[25px] h-[3px]  transition-all origin-bottom-right" 
-            x-bind:class="{'rotate-[-30deg]': isShow}"></span>
-            <span class="dark:bg-slate-200 bg-[#18181B] w-5 h-[2px] transition-all"
+            <span class="dark:bg-neutral-400 bg-zinc-900 w-[20px] h-[3px]  transition-all origin-bottom-right" 
+            x-bind:class="{'rotate-[-40deg]': isShow}"></span>
+            <span class="dark:bg-neutral-400 bg-zinc-900 w-4 h-[2px] transition-all"
             x-bind:class="{'w-[0px]': isShow}"></span>
-            <span class="dark:bg-slate-200 bg-[#18181B] w-[25px] h-[3px] transition-all origin-bottom-right"
-            x-bind:class="{'rotate-[30deg]': isShow}"></span>
+            <span class="dark:bg-neutral-400 bg-zinc-900 w-[20px] h-[3px] transition-all origin-bottom-right"
+            x-bind:class="{'rotate-[37deg]': isShow}"></span>
         </div>
         <div class="toggleNavbar gap-4 top-[-100%] 
         transition-all duration-150" 
